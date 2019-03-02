@@ -19,15 +19,16 @@ router.get("/register",function(req,res){
 });
 
 router.post("/register",function(req,res){
-    Doctor.register(new Doctor({username : req.body.username}),req.body.password, function(err,user){
-        if(err){
-            console.log(err);
-            return res.render("registerDoctor");
-        }
-        passport.authenticate("local")(req,res,function(){
-            res.send("doctor created");
-        });
-    });
+    // Doctor.register(new Doctor({username : req.body.username}), function(err,user){
+    //     if(err){
+    //         console.log(err);
+    //         return res.render("registerDoctor");
+    //     }
+    //     passport.authenticate("local")(req,res,function(){
+    //         res.send("doctor created");
+    //     });
+    // });
+    res.send("doctor Page");
 });
 
 router.get("/login", function(req,res){
